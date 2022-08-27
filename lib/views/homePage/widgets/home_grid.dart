@@ -13,7 +13,8 @@ class HomeGridView extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 64.0,
+        horizontal: 45.0,
+        vertical: 35.0,
       ),
       child: GridView.builder(
         itemCount: 33,
