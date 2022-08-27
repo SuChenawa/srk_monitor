@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:srk_monitor/views/settingpage/general.dart';
+import 'package:srk_monitor/views/settingpage/settings_layout.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'views/homePage/home_layout.dart';
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
               const SizedBox(
                 width: double.infinity,
                 height: 32.0,
+                // ignore: todo
                 // TODO change the windows Captions to what i want later
                 child: WindowCaption(),
               ),
@@ -67,7 +70,11 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Manrope',
         useMaterial3: true,
       ),
-      routes: {'/': (context) => const HomePageLayout()},
+      routes: {
+        '/': (context) => const HomePageLayout(),
+        '/settings': (context) => const SettingsPageLayout(),
+        '/general': (context) => const General(),
+      },
     );
   }
 }

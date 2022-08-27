@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/constants/colors.dart';
-import 'package:srk_monitor/views/settingpage/settings_layout.dart';
-import 'package:srk_monitor/views/homePage/widgets/home_appbar.dart';
-import 'package:srk_monitor/views/homePage/widgets/home_grid.dart';
+import 'package:srk_monitor/views/settingpage/widgets/settings_view.dart';
 
-class HomePageLayout extends StatelessWidget {
-  const HomePageLayout({Key? key}) : super(key: key);
+import '../homePage/widgets/home_appbar.dart';
+
+class General extends StatelessWidget {
+  const General({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class HomePageLayout extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                'Srk Monitor',
+                'General',
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
@@ -31,7 +31,7 @@ class HomePageLayout extends StatelessWidget {
                   primary: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  'Setting',
+                  'Back',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,
@@ -39,15 +39,11 @@ class HomePageLayout extends StatelessWidget {
                   ),
                 ),
                 icon: Icon(
-                  Icons.settings,
+                  Icons.arrow_back,
                   color: textColor,
                 ),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SettingsPageLayout()),
-                  );
+                  Navigator.pop(context);
                 },
               ),
               const SizedBox(width: 64.0),
@@ -55,7 +51,7 @@ class HomePageLayout extends StatelessWidget {
           ),
         ),
       ),
-      body: const HomeGridView(),
+      body: const Text('General data'),
     );
   }
 }
