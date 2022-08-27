@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/constants/colors.dart';
 import 'package:srk_monitor/views/homePage/widgets/home_appbar.dart';
+import 'package:srk_monitor/views/homePage/widgets/home_grid.dart';
 
 class HomePageLayout extends StatelessWidget {
   const HomePageLayout({Key? key}) : super(key: key);
@@ -47,12 +48,7 @@ class HomePageLayout extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        color: surface0Color,
-        child: Center(
-          child: Text('su bao shi 0'),
-        ),
-      ),
+      body: const HomeGridView(),
     );
   }
 }

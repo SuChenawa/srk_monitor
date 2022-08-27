@@ -7,3 +7,6 @@ Color surface3Color = Colors.deepPurple[200]!;
 Color surface4Color = Colors.deepPurple[400]!;
 
 Color textColor = const Color(0xFF1A1C1D);
+Color textRedColor = const Color(0xFFFF3939);
+
+Color liveIndicatorColor = const Color(0xFFFF9B90);

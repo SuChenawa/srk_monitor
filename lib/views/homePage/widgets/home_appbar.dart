@@ -3,6 +3,7 @@ import 'package:srk_monitor/constants/colors.dart';
 
 class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final Widget child;
+
   const HomeAppBar({
     Key? key,
     required this.child,

@@ -28,13 +28,13 @@ class MyApp extends StatelessWidget {
       title: 'Srk Monitor',
       builder: (context, child) {
         return ClipRRect(
-          borderRadius: BorderRadius.circular(64.0),
+          borderRadius: BorderRadius.circular(32.0),
           child: Stack(
             children: [
               Container(
                 decoration: BoxDecoration(
                   color: Colors.greenAccent.withOpacity(.4),
-                  borderRadius: BorderRadius.circular(64.0),
+                  borderRadius: BorderRadius.circular(32.0),
                 ),
                 child: child,
               ),
