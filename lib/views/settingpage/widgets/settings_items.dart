@@ -15,7 +15,7 @@ class SettignsItems extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           children: <Widget>[
             ListTile(
-                title: const Text('Home'),
+                title: const Text('Homez'),
                 subtitle: const Text('subtitle'),
                 leading: const Icon(Icons.home),
                 onTap: () {

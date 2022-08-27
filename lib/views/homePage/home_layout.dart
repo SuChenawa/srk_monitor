@@ -25,30 +25,33 @@ class HomePageLayout extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(
-                  onPrimary: surface4Color,
-                  primary: surface2Color,
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                label: Text(
-                  'Setting',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: textColor,
-                    height: 1.5,
+              Hero(
+                tag: 'SettingsHero',
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    onPrimary: surface4Color,
+                    primary: surface2Color,
+                  ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+                  label: Text(
+                    'Setting',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: textColor,
+                      height: 1.5,
+                    ),
                   ),
+                  icon: Icon(
+                    Icons.settings,
+                    color: textColor,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SettingsPageLayout()),
+                    );
+                  },
                 ),
-                icon: Icon(
-                  Icons.settings,
-                  color: textColor,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SettingsPageLayout()),
-                  );
-                },
               ),
               const SizedBox(width: 64.0),
             ],
