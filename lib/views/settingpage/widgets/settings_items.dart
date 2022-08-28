@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/views/settingpage/general.dart';
-import 'package:srk_monitor/views/settingpage/settings_layout.dart';
 
 class SettignsItems extends StatelessWidget {
   const SettignsItems({Key? key}) : super(key: key);

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:srk_monitor/views/settingpage/general.dart';
-import 'package:srk_monitor/views/settingpage/settings_layout.dart';
 import 'package:window_manager/window_manager.dart';
 
-import 'views/homePage/home_layout.dart';
+import 'views/home_page/home_layout.dart';
+import 'views/settingpage/general.dart';
+import 'views/settingpage/settings_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

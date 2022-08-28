@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:srk_monitor/constants/colors.dart';
-import 'package:srk_monitor/views/settingpage/settings_layout.dart';
-import 'package:srk_monitor/views/homePage/widgets/home_appbar.dart';
-import 'package:srk_monitor/views/homePage/widgets/home_grid.dart';
+
+import '../../constants/colors.dart';
+import '../settingpage/settings_layout.dart';
+import '../settingpage/utils/hero_rect_tween.dart';
+import '../settingpage/utils/hero_route.dart';
+import 'widgets/home_appbar.dart';
+import 'widgets/home_grid.dart';
 
 class HomePageLayout extends StatelessWidget {
   const HomePageLayout({Key? key}) : super(key: key);
@@ -26,6 +29,8 @@ class HomePageLayout extends StatelessWidget {
               ),
               const Spacer(),
               Hero(
+                createRectTween: (begin, end) =>
+                    HeroRectTween(begin: begin, end: end),
                 tag: 'SettingsHero',
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
@@ -47,8 +52,11 @@ class HomePageLayout extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const SettingsPageLayout()),
+                      HeroRoute(
+                        builder: (context) => const Center(
+                          child: SettingsPageLayout(),
+                        ),
+                      ),
                     );
                   },
                 ),

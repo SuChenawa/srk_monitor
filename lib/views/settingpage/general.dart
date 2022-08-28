@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:srk_monitor/constants/colors.dart';
-import 'package:srk_monitor/views/settingpage/widgets/settings_view.dart';
 
-import '../homePage/widgets/home_appbar.dart';
+import '../../constants/colors.dart';
+import '../home_page/widgets/home_appbar.dart';
 
 class General extends StatelessWidget {
   const General({Key? key}) : super(key: key);
