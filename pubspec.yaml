@@ -37,6 +37,7 @@ dependencies:
   flutter_riverpod: ^1.0.4
   window_manager: ^0.2.7
   flutter_acrylic: ^1.0.0+2
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
