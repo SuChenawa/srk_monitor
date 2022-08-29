@@ -55,31 +55,65 @@ class LiveCardView extends StatelessWidget {
                 right: 20.0,
                 bottom: 5.0,
               ),
+              //获取直播间标题
               child: FutureBuilder<Post>(
                 future: fetchPost(String),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return Text('status:${snapshot.data!.msg}');
+                    return Text(
+                      'status:${snapshot.data!.msg}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 24.0,
+                        color: textColor,
+                      ),
+                    );
                   } else if (snapshot.hasError) {
                     return Text("${snapshot.error}");
                   }
-
                   // By default, show a loading spinner
-                  return const CircularProgressIndicator();
+                  // return const CircularProgressIndicator();
+                  return const Padding(
+                    padding: const EdgeInsets.only(
+                      top: 20.0,
+                      left: 0.0,
+                      right: 0.0,
+                      bottom: 20.0,
+                    ),
+                    child: LinearProgressIndicator(),
+                  );
                 },
               ),
-              // Text(
-              //   name,
-              //   style: TextStyle(
-              //     fontWeight: FontWeight.w800,
-              //     fontSize: 24.0,
-              //     color: textColor,
-              //   ),
-              // ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: LiveIndicator(isLive: isLive),
+              padding: const EdgeInsets.only(left: 20.0, right: 20),
+              child: Row(children: [
+                LiveIndicator(isLive: isLive),
+                const Spacer(),
+                //主播名字
+                FutureBuilder<Post>(
+                  future: fetchPost(String),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        // 'status:${snapshot.data!.message}',
+                        'Loading',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18.0,
+                          color: textColor,
+                        ),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("${snapshot.error}");
+                    }
+
+                    // By default, show a loading spinner
+                    // return const CircularProgressIndicator();
+                    return Text('data');
+                  },
+                ),
+              ]),
             ),
           ],
         ),

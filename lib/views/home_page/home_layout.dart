@@ -24,7 +24,7 @@ class HomePageLayout extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
-                  fontSize: 56.0,
+                  fontSize: 32.0,
                 ),
               ),
               const Spacer(),
