@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srk_monitor/views/home_page/constants/streamer.dart';
 
@@ -35,3 +37,37 @@ final streamerProvider =
     StateNotifierProvider<StreamerNotifier, List<Streamer>>((ref) {
   return StreamerNotifier();
 });
+
+// ignore: todo
+// TODO: get JSON file
+
+Future<Post> fetchPost(String room_id) async {
+  final response = await http.get(Uri.parse(
+      'http://api.live.bilibili.com/room/v1/Room/get_info?room_id=$room_id'));
+  final responseJson = json.decode(response.body);
+
+  return new Post.fromJson(responseJson);
+}
+
+class Post {
+  final int code;
+  final String msg;
+  final String message;
+
+  Post({
+    required this.code,
+    required this.msg,
+    required this.message,
+  });
+
+  factory Post.fromJson(Map<String, dynamic> json) {
+    return new Post(
+      code: json['code'],
+      msg: json['msg'],
+      message: json['message'],
+    );
+  }
+}
+
+
+// http://api.live.bilibili.com/room/v1/Room/get_info
