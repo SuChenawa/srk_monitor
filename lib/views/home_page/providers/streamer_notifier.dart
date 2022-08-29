@@ -41,27 +41,30 @@ final streamerProvider =
 // ignore: todo
 // TODO: get JSON file
 
-Future<Post> fetchPost(String room_id) async {
+Future<Post> fetchPost(String) async {
   final response = await http.get(Uri.parse(
-      'http://api.live.bilibili.com/room/v1/Room/get_info?room_id=$room_id'));
+      'http://api.live.bilibili.com/room/v1/Room/get_info?room_id=4506805'));
   final responseJson = json.decode(response.body);
 
-  return new Post.fromJson(responseJson);
+  return Post.fromJson(responseJson);
 }
 
 class Post {
   final int code;
   final String msg;
   final String message;
+  // final data;
 
   Post({
     required this.code,
     required this.msg,
     required this.message,
+    // required this.data,
+    // required livestatus,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return new Post(
+    return Post(
       code: json['code'],
       msg: json['msg'],
       message: json['message'],

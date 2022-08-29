@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/constants/colors.dart';
+import 'package:srk_monitor/views/home_page/providers/streamer_notifier.dart';
 import 'package:srk_monitor/widgets/inkwell_widget.dart';
 
 import '../../../constants/images.dart';
@@ -54,14 +55,27 @@ class LiveCardView extends StatelessWidget {
                 right: 20.0,
                 bottom: 5.0,
               ),
-              child: Text(
-                name,
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 24.0,
-                  color: textColor,
-                ),
+              child: FutureBuilder<Post>(
+                future: fetchPost(String),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text('status:${snapshot.data!.msg}');
+                  } else if (snapshot.hasError) {
+                    return Text("${snapshot.error}");
+                  }
+
+                  // By default, show a loading spinner
+                  return const CircularProgressIndicator();
+                },
               ),
+              // Text(
+              //   name,
+              //   style: TextStyle(
+              //     fontWeight: FontWeight.w800,
+              //     fontSize: 24.0,
+              //     color: textColor,
+              //   ),
+              // ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
