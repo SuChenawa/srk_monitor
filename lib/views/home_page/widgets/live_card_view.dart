@@ -61,7 +61,7 @@ class LiveCardView extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Text(
-                      'status:${snapshot.data!.msg}',
+                      'status:${snapshot.data?.msg}',
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 24.0,
