@@ -17,7 +17,7 @@ class HeroRoute extends PageRoute {
   bool get barrierDismissible => true;
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 300);
+  Duration get transitionDuration => const Duration(milliseconds: 600);
 
   @override
   bool get maintainState => true;
