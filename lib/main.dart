@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:srk_monitor/constants/colors.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'views/home_page/home_layout.dart';
@@ -67,7 +68,8 @@ class MyApp extends StatelessWidget {
         );
       },
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorSchemeSeed: surface4Color,
+        brightness: Brightness.light,
         fontFamily: 'Manrope',
         useMaterial3: true,
       ),

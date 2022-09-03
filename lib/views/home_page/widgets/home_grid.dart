@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:srk_monitor/views/home_page/constants/streamer.dart';
 import 'package:srk_monitor/views/home_page/providers/streamer_notifier.dart';
 
 import 'live_card_view.dart';
@@ -14,9 +13,8 @@ class HomeGridView extends ConsumerWidget {
     double width = MediaQuery.of(context).size.width;
     int crossAxisCount = (width - padding) ~/ 160;
     StreamerNotifier streamerNotifier = ref.read(streamerProvider.notifier);
-    List<Streamer> streamers = ref.watch(streamerProvider);
-
-    debugPrint(streamers.toString());
+    // streamers 裝著一個Roomid 的 List
+    List<String> streamers = ref.watch(streamerProvider);
 
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -24,7 +22,7 @@ class HomeGridView extends ConsumerWidget {
         vertical: 35.0,
       ),
       child: GridView.builder(
-        itemCount: 33,
+        itemCount: streamers.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: crossAxisCount == 0 ? 1 : crossAxisCount,
             childAspectRatio: 1.114),
@@ -32,11 +30,9 @@ class HomeGridView extends ConsumerWidget {
           return FittedBox(
             fit: BoxFit.fitHeight,
             child: LiveCardView(
-              name: 'SuChen is $index',
+              name: streamers[index],
               isLive: true,
-              onTap: () {
-                streamerNotifier.addStreamer(index.toString());
-              },
+              onTap: () {},
             ),
           );
         },

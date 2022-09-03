@@ -4,6 +4,7 @@ import '../../constants/colors.dart';
 import '../settingpage/settings_layout.dart';
 import '../settingpage/utils/hero_rect_tween.dart';
 import '../settingpage/utils/hero_route.dart';
+import 'widgets/add_streamer_card.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_grid.dart';
 
@@ -13,6 +14,23 @@ class HomePageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            HeroRoute(
+              builder: (context) => const Center(
+                child: AddStreamrCard(),
+              ),
+            ),
+          );
+        },
+        splashColor: surface4Color,
+        backgroundColor: surface2Color,
+        foregroundColor: textColor,
+        heroTag: 'AddStreamer',
+        child: const Icon(Icons.add),
+      ),
       appBar: HomeAppBar(
         child: Container(
           alignment: Alignment.centerRight,
