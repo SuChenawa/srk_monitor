@@ -5,7 +5,7 @@ import 'package:srk_monitor/constants/colors.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'views/home_page/home_layout.dart';
-import 'views/settingpage/general.dart';
+import 'views/settingpage/settings_items/general.dart';
 import 'views/settingpage/settings_layout.dart';
 
 void main() async {
@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomePageLayout(),
         '/settings': (context) => const SettingsPageLayout(),
-        '/general': (context) => const General(),
+        '/general': (context) => const GeneralPage(),
       },
     );
   }

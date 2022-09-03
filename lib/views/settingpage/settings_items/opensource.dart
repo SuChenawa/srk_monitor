@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/colors.dart';
-import '../home_page/widgets/home_appbar.dart';
+import '../../../constants/colors.dart';
+import '../../home_page/widgets/home_appbar.dart';
 
-class General extends StatelessWidget {
-  const General({Key? key}) : super(key: key);
+class OpenSourceLicensePage extends StatelessWidget {
+  const OpenSourceLicensePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class General extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                'General',
+                '开放源代码许可',
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
