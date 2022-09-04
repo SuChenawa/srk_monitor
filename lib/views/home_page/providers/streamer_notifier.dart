@@ -4,10 +4,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:srk_monitor/services/base_resopnse.dart';
 
+import '../models/responses/room_info_response_data.dart';
 import '../services/home_page_services.dart';
 
-class StreamerNotifier extends StateNotifier<List<String>> {
+class StreamerNotifier extends StateNotifier<List<RoomInfoResponse>> {
   late SharedPreferences prefs;
+  List<String> roomIds = [];
   // 關注的房間list
   StreamerNotifier() : super([]) {
     // initialize shared_preferences
@@ -16,21 +18,28 @@ class StreamerNotifier extends StateNotifier<List<String>> {
 
   void addStreamer(BuildContext context, String roomId) async {
     if (await checkRoomValid(roomId)) {
-      state = [...state, roomId];
-      prefs.setStringList('subscripe', state);
+      roomIds = [...roomIds, roomId];
+      prefs.setStringList('subscripe', roomIds);
+      fetchData();
     } else {
       const snackBar = SnackBar(
-        content: Text('Yay! A SnackBar!'),
+        content: Text('錯誤!'),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
 
-  void removeStreamer(String roomId) {
-    state = [
-      for (final id in state)
+  void removeStreamer(String roomId, String shortId) {
+    roomIds = [
+      for (final id in roomIds)
         if (id != roomId) id
     ];
+    roomIds = [
+      for (final id in roomIds)
+        if (id != shortId) id
+    ];
+    prefs.setStringList('subscripe', roomIds);
+    fetchData();
   }
 
   Future<bool> checkRoomValid(String roomId) async {
@@ -43,48 +52,26 @@ class StreamerNotifier extends StateNotifier<List<String>> {
     }
   }
 
-  String getCoverurl(String uid) {
-    return 'subaoshi0.png';
-  }
-
-  bool getLiveStatus(String uid) {
-    return true;
+  void fetchData() async {
+    List<RoomInfoResponse> roomList = [];
+    for (var id in roomIds) {
+      BaseResponse respons = await HomePageServices().getRoomInfo(id);
+      if (respons.code == 0) {
+        RoomInfoResponse data = respons.data;
+        roomList = [...roomList, data];
+        state = roomList;
+      }
+    }
   }
 
   void initpref() async {
     prefs = await SharedPreferences.getInstance();
-    state = prefs.getStringList('subscripe') ?? [];
+    roomIds = prefs.getStringList('subscripe') ?? [];
+    fetchData();
   }
 }
 
 final streamerProvider =
-    StateNotifierProvider<StreamerNotifier, List<String>>((ref) {
+    StateNotifierProvider<StreamerNotifier, List<RoomInfoResponse>>((ref) {
   return StreamerNotifier();
 });
-
-// TODO 我有空再refactor吧<Ev0>
-Future<Post> fetchPost(String) async {
-  HomePageServices().getRoomInfo('4506805');
-  // TODO change return data into real data
-  return Post(code: 1, message: '2', msg: '3');
-}
-
-class Post {
-  final int code;
-  final String msg;
-  final String message;
-
-  Post({
-    required this.code,
-    required this.msg,
-    required this.message,
-  });
-
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
-      code: json['code'],
-      msg: json['msg'],
-      message: json['message'],
-    );
-  }
-}

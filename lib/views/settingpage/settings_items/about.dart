@@ -69,7 +69,7 @@ class AboutPage extends StatelessWidget {
             ),
             ListTile(
               title: Text('Version'),
-              subtitle: Text('alpha 0.114.514.19.19.810'),
+              subtitle: Text('pre alpha 0.114.514.19.19.810'),
             ),
           ],
         ),

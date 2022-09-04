@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:convert' show jsonDecode, jsonEncode;
+import 'dart:convert' show jsonDecode, jsonEncode, utf8;
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
@@ -46,12 +46,21 @@ class HttpService {
         retryAttempts: retryAttempts,
       );
 
-      final data = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        final data = jsonDecode(utf8.decode(response.bodyBytes));
 
-      return data;
+        if (data['code'] == 0 || data['code'] == '0') {
+          return data['data'];
+        }
+
+        throw data;
+      }
+      throw response;
     } catch (e) {
       if (e is SocketException) {
-        rethrow;
+        if (isShowError) {
+          rethrow;
+        }
       }
 
       if (isThrowError) {

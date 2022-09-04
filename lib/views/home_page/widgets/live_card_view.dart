@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/constants/colors.dart';
-import 'package:srk_monitor/views/home_page/providers/streamer_notifier.dart';
 import 'package:srk_monitor/widgets/inkwell_widget.dart';
 
 import '../../../constants/images.dart';
 import 'live_indicator.dart';
 
 class LiveCardView extends StatelessWidget {
-  final String name;
-  final bool isLive;
+  final String? coverUrl;
+  final String roomId;
+  final String title;
+  final int isLive;
+  final String userName;
   final VoidCallback onTap;
+  final VoidCallback? onLongPress;
   const LiveCardView({
     Key? key,
-    required this.name,
+    required this.title,
     required this.isLive,
     required this.onTap,
+    required this.coverUrl,
+    required this.roomId,
+    this.onLongPress,
+    required this.userName,
   }) : super(key: key);
 
   @override
@@ -29,6 +36,7 @@ class LiveCardView extends StatelessWidget {
       ),
       child: InkwellWidget(
         onTap: onTap,
+        onLongPress: onLongPress,
         borderRadius: BorderRadius.circular(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,12 +48,19 @@ class LiveCardView extends StatelessWidget {
               ),
               child: AspectRatio(
                 aspectRatio: 1.778,
-                child: Image.asset(
-                  height: 180.0,
-                  width: 320.0,
-                  getPlaceHolderPath,
-                  fit: BoxFit.fitHeight,
-                ),
+                child: coverUrl == null
+                    ? Image.asset(
+                        getPlaceHolderPath,
+                        height: 180.0,
+                        width: 320.0,
+                        fit: BoxFit.fill,
+                      )
+                    : Image.network(
+                        coverUrl ?? '',
+                        height: 180.0,
+                        width: 320.0,
+                        fit: BoxFit.fill,
+                      ),
               ),
             ),
             Padding(
@@ -56,64 +71,31 @@ class LiveCardView extends StatelessWidget {
                 bottom: 5.0,
               ),
               //获取直播间标题
-              child: FutureBuilder<Post>(
-                future: fetchPost(String),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(
-                      'status:${snapshot.data?.msg}',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 24.0,
-                        color: textColor,
-                      ),
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text("${snapshot.error}");
-                  }
-                  // By default, show a loading spinner
-                  // return const CircularProgressIndicator();
-                  return const Padding(
-                    padding: const EdgeInsets.only(
-                      top: 20.0,
-                      left: 0.0,
-                      right: 0.0,
-                      bottom: 20.0,
-                    ),
-                    child: LinearProgressIndicator(),
-                  );
-                },
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 24.0,
+                  color: textColor,
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20),
-              child: Row(children: [
-                LiveIndicator(isLive: isLive),
-                const Spacer(),
-                //主播名字
-                FutureBuilder<Post>(
-                  future: fetchPost(String),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return Text(
-                        // 'status:${snapshot.data!.message}',
-                        'Loading',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18.0,
-                          color: textColor,
-                        ),
-                      );
-                    } else if (snapshot.hasError) {
-                      return Text("${snapshot.error}");
-                    }
-
-                    // By default, show a loading spinner
-                    // return const CircularProgressIndicator();
-                    return Text('data');
-                  },
-                ),
-              ]),
+              child: Row(
+                children: [
+                  LiveIndicator(isLive: isLive == 1),
+                  const Spacer(),
+                  Text(
+                    userName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18.0,
+                      color: textColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

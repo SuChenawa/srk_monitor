@@ -4,6 +4,7 @@ import 'package:srk_monitor/constants/colors.dart';
 class InkwellWidget extends StatelessWidget {
   final Widget child;
   final Function onTap;
+  final Function? onLongPress;
   final BorderRadius? borderRadius;
 
   const InkwellWidget({
@@ -11,6 +12,7 @@ class InkwellWidget extends StatelessWidget {
     required this.child,
     required this.onTap,
     this.borderRadius,
+    this.onLongPress,
   }) : super(key: key);
 
   @override
@@ -26,6 +28,11 @@ class InkwellWidget extends StatelessWidget {
               highlightColor: surface3Color.withOpacity(0.05),
               onTap: () {
                 onTap();
+              },
+              onLongPress: () {
+                if (onLongPress != null) {
+                  onLongPress!();
+                }
               },
               borderRadius: borderRadius,
             ),

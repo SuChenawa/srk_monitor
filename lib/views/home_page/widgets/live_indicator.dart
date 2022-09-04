@@ -13,14 +13,15 @@ class LiveIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 10.0,
-          height: 10.0,
-          decoration: BoxDecoration(
-            color: liveIndicatorColor,
-            borderRadius: BorderRadius.circular(10.0),
+        if (isLive)
+          Container(
+            width: 10.0,
+            height: 10.0,
+            decoration: BoxDecoration(
+              color: liveIndicatorColor,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
           ),
-        ),
         const SizedBox(width: 6.0),
         Text(
           isLive ? 'Live' : 'offline',
@@ -28,7 +29,7 @@ class LiveIndicator extends StatelessWidget {
             fontWeight: FontWeight.w800,
             fontSize: 18.0,
             height: 32.0 / 18.0,
-            color: textRedColor,
+            color: isLive ? textRedColor : textColor,
           ),
         ),
       ],
