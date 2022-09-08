@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:srk_monitor/views/livestreame/LivePage.dart';
 
 import '../../constants/colors.dart';
 import '../settingpage/settings_layout.dart';
@@ -46,6 +47,34 @@ class HomePageLayout extends StatelessWidget {
                 ),
               ),
               const Spacer(),
+
+              // 臨時測試入口
+              ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  onPrimary: surface4Color,
+                  primary: surface2Color,
+                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+                label: Text(
+                  '臨時測試入口',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: textColor,
+                    height: 1.5,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.engineering,
+                  color: textColor,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LivePage()));
+                },
+              ),
+              const SizedBox(width: 32.0),
+
               Hero(
                 createRectTween: (begin, end) =>
                     HeroRectTween(begin: begin, end: end),
