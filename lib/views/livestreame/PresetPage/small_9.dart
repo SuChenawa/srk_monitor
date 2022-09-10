@@ -9,7 +9,7 @@ class small_9 extends StatelessWidget {
       color: Colors.black26,
       child: Row(
         children: [
-          SizedBox.expand(
+          Expanded(
             child: FractionallySizedBox(
               widthFactor: 0.5,
               heightFactor: 0.5,

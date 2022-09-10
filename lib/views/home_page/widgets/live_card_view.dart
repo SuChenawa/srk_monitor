@@ -73,6 +73,8 @@ class LiveCardView extends StatelessWidget {
               //获取直播间标题
               child: Text(
                 title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   fontSize: 24.0,
