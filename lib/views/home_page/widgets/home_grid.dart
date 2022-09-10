@@ -31,9 +31,10 @@ class HomeGridView extends ConsumerWidget {
             crossAxisCount: crossAxisCount == 0 ? 1 : crossAxisCount,
             childAspectRatio: 1.114),
         itemBuilder: (context, index) {
-          if (liveUser.length > index + 1) {
-            return Container();
-          }
+          String userName = 'Loading...';
+          try {
+            userName = liveUser[index].info?.uname ?? 'Loading...';
+          } catch (_) {}
           return FittedBox(
             fit: BoxFit.fitHeight,
             child: LiveCardView(
@@ -42,7 +43,7 @@ class HomeGridView extends ConsumerWidget {
               isLive: streamers[index].liveStatus,
               coverUrl: streamers[index].userCover,
               // TODO 他媽的主播名字還要另一條api才能拿到
-              userName: liveUser[index].info?.uname ?? 'cannot get user name',
+              userName: userName,
               onTap: () {},
               onLongPress: () {
                 streamerNotifier.removeStreamer(
