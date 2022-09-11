@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorSchemeSeed: surface4Color,
         brightness: Brightness.light,
-        fontFamily: 'Manrope',
+        fontFamily: 'HarmonyOS_Sans_SC',
         useMaterial3: true,
       ),
       routes: {

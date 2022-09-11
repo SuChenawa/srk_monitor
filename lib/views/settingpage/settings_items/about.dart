@@ -17,7 +17,7 @@ class AboutPage extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                'About',
+                '关于',
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
@@ -31,7 +31,7 @@ class AboutPage extends StatelessWidget {
                   primary: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  'Back',
+                  '返回上一级',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,
@@ -60,15 +60,15 @@ class AboutPage extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           children: const <Widget>[
             ListTile(
-              title: Text('App name'),
+              title: Text('应用名称'),
               subtitle: Text('Srk-Monitor'),
             ),
             ListTile(
-              title: Text('Send feedback'),
-              subtitle: Text('encountered an error?'),
+              title: Text('用户反馈'),
+              subtitle: Text('遇到问题?'),
             ),
             ListTile(
-              title: Text('Version'),
+              title: Text('版本信息'),
               subtitle: Text('pre alpha 0.114.514.19.19.810'),
             ),
           ],

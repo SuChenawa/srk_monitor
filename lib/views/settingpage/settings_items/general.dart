@@ -16,7 +16,7 @@ class GeneralPage extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                'General',
+                '通用',
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
@@ -30,7 +30,7 @@ class GeneralPage extends StatelessWidget {
                   primary: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  'Back',
+                  '返回上一级',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,

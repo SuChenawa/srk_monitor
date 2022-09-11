@@ -55,7 +55,7 @@ class HomePageLayout extends StatelessWidget {
                   primary: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  '臨時測試入口',
+                  '临时测试入口',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,
@@ -85,7 +85,7 @@ class HomePageLayout extends StatelessWidget {
                     primary: surface2Color,
                   ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                   label: Text(
-                    'Setting',
+                    '设置',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: textColor,

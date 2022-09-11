@@ -30,7 +30,7 @@ class OpenSourceLicensePage extends StatelessWidget {
                   primary: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  'Back',
+                  '返回上一级',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,

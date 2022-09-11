@@ -30,7 +30,7 @@ class AddStreamrCard extends ConsumerWidget {
                       width: 200.0,
                       child: Center(
                         child: Text(
-                          'Room ID',
+                          '请输入房间ID',
                           style: TextStyle(
                             fontSize: 16.0,
                             color: textColor,
@@ -77,7 +77,7 @@ class AddStreamrCard extends ConsumerWidget {
                           }
                         },
                         child: Text(
-                          'OK',
+                          '确认',
                           style: TextStyle(
                             color: textColor,
                           ),
