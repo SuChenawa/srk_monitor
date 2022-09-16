@@ -14,6 +14,7 @@ class small_9 extends StatelessWidget {
   ConstraintId box6 = ConstraintId('box6');
   ConstraintId box7 = ConstraintId('box7');
   ConstraintId box8 = ConstraintId('box8');
+  ConstraintId box9 = ConstraintId('box9');
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +33,13 @@ class small_9 extends StatelessWidget {
         children: [
           Container(
             color: Colors.yellow,
-            alignment: Alignment.bottomCenter,
-            child: const Text(
-                'percentage layout\nwidth: 75% of parent\nheight: 75% of parent'),
+            alignment: Alignment.center,
+            child: const Text('x'),
           ).applyConstraint(
             id: box1,
             size: matchConstraint,
-            widthPercent: 0.75,
-            heightPercent: 0.75,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
             horizontalBias: 0,
             verticalBias: 0,
             centerTo: parent,
@@ -53,10 +53,10 @@ class small_9 extends StatelessWidget {
               // Constraints set with widgets
               id: box2,
               size: matchConstraint,
-              widthPercent: 0.25,
-              heightPercent: 0.25,
-              horizontalBias: 0,
-              verticalBias: 1,
+              widthPercent: 1 / 3,
+              heightPercent: 1 / 3,
+              horizontalBias: 1 / 2,
+              verticalBias: 0,
               centerTo: parent,
             ),
           ),
@@ -67,10 +67,10 @@ class small_9 extends StatelessWidget {
           ).applyConstraint(
             id: box3,
             size: matchConstraint,
-            widthPercent: 0.25,
-            heightPercent: 0.25,
-            horizontalBias: 1 / 3,
-            verticalBias: 1,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
+            horizontalBias: 1,
+            verticalBias: 0,
             centerTo: parent,
           ),
           Container(
@@ -80,10 +80,10 @@ class small_9 extends StatelessWidget {
           ).applyConstraint(
             id: box4,
             size: matchConstraint,
-            widthPercent: 0.25,
-            heightPercent: 0.25,
-            horizontalBias: 2 / 3,
-            verticalBias: 1,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
+            horizontalBias: 0,
+            verticalBias: 1 / 2,
             centerTo: parent,
           ),
           Container(
@@ -93,10 +93,10 @@ class small_9 extends StatelessWidget {
           ).applyConstraint(
             id: box5,
             size: matchConstraint,
-            widthPercent: 0.25,
-            heightPercent: 0.25,
-            horizontalBias: 1,
-            verticalBias: 1,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
+            horizontalBias: 1 / 2,
+            verticalBias: 1 / 2,
             centerTo: parent,
           ),
           Container(
@@ -106,10 +106,10 @@ class small_9 extends StatelessWidget {
           ).applyConstraint(
             id: box6,
             size: matchConstraint,
-            widthPercent: 0.25,
-            heightPercent: 0.25,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
             horizontalBias: 1,
-            verticalBias: 0,
+            verticalBias: 1 / 2,
             centerTo: parent,
           ),
           Container(
@@ -119,10 +119,10 @@ class small_9 extends StatelessWidget {
           ).applyConstraint(
             id: box7,
             size: matchConstraint,
-            widthPercent: 0.25,
-            heightPercent: 0.25,
-            horizontalBias: 1,
-            verticalBias: 1 / 3,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
+            horizontalBias: 0,
+            verticalBias: 1,
             centerTo: parent,
           ),
           Container(
@@ -132,10 +132,23 @@ class small_9 extends StatelessWidget {
           ).applyConstraint(
             id: box8,
             size: matchConstraint,
-            widthPercent: 0.25,
-            heightPercent: 0.25,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
+            horizontalBias: 1 / 2,
+            verticalBias: 1,
+            centerTo: parent,
+          ),
+          Container(
+            color: Colors.teal[200],
+            alignment: Alignment.center,
+            child: const Text('x'),
+          ).applyConstraint(
+            id: box9,
+            size: matchConstraint,
+            widthPercent: 1 / 3,
+            heightPercent: 1 / 3,
             horizontalBias: 1,
-            verticalBias: 2 / 3,
+            verticalBias: 1,
             centerTo: parent,
           ),
         ],
