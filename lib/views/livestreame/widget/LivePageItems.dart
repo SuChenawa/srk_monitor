@@ -6,6 +6,6 @@ class LivePageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const small_9();
+    return small_9();
   }
 }
