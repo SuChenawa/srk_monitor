@@ -168,7 +168,7 @@ packages:
       name: dart_vlc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.9"
+    version: "0.3.0"
   dart_vlc_ffi:
     dependency: transitive
     description:
@@ -237,6 +237,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  flutter_native_view:
+    dependency: "direct main"
+    description:
+      name: flutter_native_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   flutter_riverpod:
     dependency: "direct main"
     description:

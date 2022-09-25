@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 
+import '../widget/player.dart';
+
 class small_9 extends StatelessWidget {
   double x = 0;
   double y = 0;
@@ -45,7 +47,6 @@ class small_9 extends StatelessWidget {
             centerTo: parent,
           ),
           Container(
-            color: Colors.redAccent,
             alignment: Alignment.center,
             child: const Text('box2'),
           ).apply(
@@ -89,7 +90,7 @@ class small_9 extends StatelessWidget {
           Container(
             color: Colors.green,
             alignment: Alignment.center,
-            child: const Text('x'),
+            child: const StreamPlayer(),
           ).applyConstraint(
             id: box5,
             size: matchConstraint,

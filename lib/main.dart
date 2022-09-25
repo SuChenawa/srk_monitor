@@ -1,3 +1,4 @@
+import 'package:dart_vlc/dart_vlc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,6 +20,7 @@ void main() async {
     await windowManager.setHasShadow(false);
     windowManager.show();
   });
+  DartVLC.initialize(useFlutterNativeView: true);
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return ClipRRect(
           borderRadius: BorderRadius.circular(32.0),
+          clipBehavior: Clip.hardEdge,
           child: Stack(
             children: [
               Container(
