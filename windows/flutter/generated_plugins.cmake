@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  dart_vlc
   flutter_acrylic
   screen_retriever
   window_manager

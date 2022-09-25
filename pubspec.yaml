@@ -43,6 +43,8 @@ dependencies:
   retry: ^3.1.0
   shared_preferences: ^2.0.15
   flutter_constraintlayout: ^1.6.3-stable
+  dio: ^4.0.6
+  dart_vlc: ^0.1.9
   
 
 dev_dependencies:
