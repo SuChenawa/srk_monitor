@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:srk_monitor/views/livestreame/LivePage.dart';
+import 'package:srk_monitor/views/live_streame/LivePage.dart';
 
 import '../../constants/colors.dart';
 import '../settingpage/settings_layout.dart';

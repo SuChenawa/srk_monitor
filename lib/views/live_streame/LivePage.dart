@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/constants/colors.dart';
-import 'package:srk_monitor/views/livestreame/widget/LivePageItems.dart';
+import 'package:srk_monitor/views/live_streame/widget/LivePageItems.dart';
 
 class LivePage extends StatelessWidget {
   const LivePage({super.key});
