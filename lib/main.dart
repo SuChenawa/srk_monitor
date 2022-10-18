@@ -20,7 +20,7 @@ void main() async {
     await windowManager.setHasShadow(false);
     windowManager.show();
   });
-  DartVLC.initialize(useFlutterNativeView: true);
+  DartVLC.initialize(useFlutterNativeView: false);
   runApp(const ProviderScope(child: MyApp()));
 }
 
