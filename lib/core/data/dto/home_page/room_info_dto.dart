@@ -1,5 +1,5 @@
-class RoomInfoResponse {
-  RoomInfoResponse({
+class RoomInfoDto {
+  RoomInfoDto({
     required this.uid,
     required this.roomId,
     required this.shortId,
@@ -72,7 +72,7 @@ class RoomInfoResponse {
   late final int allowChangeAreaTime;
   late final int allowUploadCoverTime;
 
-  RoomInfoResponse.fromJson(Map<String, dynamic> json) {
+  RoomInfoDto.fromJson(Map<String, dynamic> json) {
     uid = json['uid'];
     roomId = json['room_id'];
     shortId = json['short_id'];

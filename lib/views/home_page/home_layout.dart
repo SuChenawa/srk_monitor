@@ -51,8 +51,8 @@ class HomePageLayout extends StatelessWidget {
               // 臨時測試入口
               ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  onPrimary: surface4Color,
-                  primary: surface2Color,
+                  foregroundColor: surface4Color,
+                  backgroundColor: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
                   '临时测试入口',

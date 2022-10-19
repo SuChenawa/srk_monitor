@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:srk_monitor/services/base_resopnse.dart';
 
 import '../models/responses/room_info_response_data.dart';
-import '../services/home_page_services.dart';
+import '../../../core/data/data_source/home_page/live_user_info_data_source.dart';
 
 class StreamerNotifier extends StateNotifier<List<RoomInfoResponse>> {
   late SharedPreferences prefs;

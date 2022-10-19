@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srk_monitor/views/home_page/providers/streamer_notifier.dart';
 
-import '../models/responses/live_user_response.dart';
-import '../models/responses/room_info_response_data.dart';
+import '../../../core/domain/entity/home_page/home_grid_entity.dart';
 import '../providers/live_user_notifier.dart';
 import 'live_card_view.dart';
 
@@ -17,8 +16,8 @@ class HomeGridView extends ConsumerWidget {
     int crossAxisCount = (width - padding) ~/ 160;
     StreamerNotifier streamerNotifier = ref.read(streamerProvider.notifier);
     // streamers 裝著一個Roomid 的 List
-    List<RoomInfoResponse> streamers = ref.watch(streamerProvider);
-    List<LiveUserResponse> liveUser = ref.watch(liveUserProvider);
+    List<HomeGridEntity> streamers = ref.watch(streamerProvider);
+    List<HomeGridEntity> liveUser = ref.watch(liveUserProvider);
 
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -42,13 +41,14 @@ class HomeGridView extends ConsumerWidget {
               title: streamers[index].title,
               isLive: streamers[index].liveStatus,
               coverUrl: streamers[index].userCover,
-              // TODO 他媽的主播名字還要另一條api才能拿到
+              // 他媽的主播名字還要另一條api才能拿到
               userName: userName,
               onTap: () {},
               onLongPress: () {
                 streamerNotifier.removeStreamer(
-                    streamers[index].roomId.toString(),
-                    streamers[index].shortId.toString());
+                  streamers[index].roomId.toString(),
+                  streamers[index].shortId.toString(),
+                );
               },
             ),
           );

@@ -1,13 +1,13 @@
 // QNMD api格式還不統一， 我base response白寫了
-class LiveStreamUrlResponse {
+class LiveStreamUrlDto {
   int? code;
   String? message;
   int? ttl;
   Data? data;
 
-  LiveStreamUrlResponse({this.code, this.message, this.ttl, this.data});
+  LiveStreamUrlDto({this.code, this.message, this.ttl, this.data});
 
-  LiveStreamUrlResponse.fromJson(Map<String, dynamic> json) {
+  LiveStreamUrlDto.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
     ttl = json['ttl'];

@@ -1,4 +1,4 @@
-class LiveUserResponse {
+class LiveUserDto {
   Info? info;
   Exp? exp;
   int? followerNum;
@@ -9,7 +9,7 @@ class LiveUserResponse {
   int? linkGroupNum;
   RoomNews? roomNews;
 
-  LiveUserResponse(
+  LiveUserDto(
       {info,
       exp,
       followerNum,
@@ -20,7 +20,7 @@ class LiveUserResponse {
       linkGroupNum,
       roomNews});
 
-  LiveUserResponse.fromJson(Map<String, dynamic> json) {
+  LiveUserDto.fromJson(Map<String, dynamic> json) {
     info = json['info'] != null ? Info.fromJson(json['info']) : null;
     exp = json['exp'] != null ? Exp.fromJson(json['exp']) : null;
     followerNum = json['follower_num'];

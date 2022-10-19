@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srk_monitor/services/base_resopnse.dart';
 import 'package:srk_monitor/views/home_page/providers/streamer_notifier.dart';
-import 'package:srk_monitor/views/home_page/services/home_page_services.dart';
+import 'package:srk_monitor/core/data/data_source/home_page/live_user_info_data_source.dart';
 
 import '../models/responses/live_user_response.dart';
 import '../models/responses/room_info_response_data.dart';
