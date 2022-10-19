@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:srk_monitor/views/live_streame/LivePage.dart';
+import 'package:srk_monitor/views/live_stream/live_page.dart';
 
 import '../../constants/colors.dart';
-import '../settingpage/settings_layout.dart';
-import '../settingpage/utils/hero_rect_tween.dart';
-import '../settingpage/utils/hero_route.dart';
+import '../setting_page/settings_layout.dart';
+import '../setting_page/utils/hero_rect_tween.dart';
+import '../setting_page/utils/hero_route.dart';
 import 'widgets/add_streamer_card.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_grid.dart';
@@ -21,7 +21,7 @@ class HomePageLayout extends StatelessWidget {
             context,
             HeroRoute(
               builder: (context) => const Center(
-                child: AddStreamrCard(),
+                child: AddStreamCard(),
               ),
             ),
           );

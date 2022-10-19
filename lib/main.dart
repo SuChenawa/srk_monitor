@@ -6,8 +6,8 @@ import 'package:srk_monitor/constants/colors.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'views/home_page/home_layout.dart';
-import 'views/settingpage/settings_items/general.dart';
-import 'views/settingpage/settings_layout.dart';
+import 'views/setting_page/settings_items/general.dart';
+import 'views/setting_page/settings_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

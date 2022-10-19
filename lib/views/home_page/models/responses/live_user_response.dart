@@ -10,46 +10,45 @@ class LiveUserResponse {
   RoomNews? roomNews;
 
   LiveUserResponse(
-      {this.info,
-      this.exp,
-      this.followerNum,
-      this.roomId,
-      this.medalName,
-      this.gloryCount,
-      this.pendant,
-      this.linkGroupNum,
-      this.roomNews});
+      {info,
+      exp,
+      followerNum,
+      roomId,
+      medalName,
+      gloryCount,
+      pendant,
+      linkGroupNum,
+      roomNews});
 
   LiveUserResponse.fromJson(Map<String, dynamic> json) {
-    info = json['info'] != null ? new Info.fromJson(json['info']) : null;
-    exp = json['exp'] != null ? new Exp.fromJson(json['exp']) : null;
+    info = json['info'] != null ? Info.fromJson(json['info']) : null;
+    exp = json['exp'] != null ? Exp.fromJson(json['exp']) : null;
     followerNum = json['follower_num'];
     roomId = json['room_id'];
     medalName = json['medal_name'];
     gloryCount = json['glory_count'];
     pendant = json['pendant'];
     linkGroupNum = json['link_group_num'];
-    roomNews = json['room_news'] != null
-        ? new RoomNews.fromJson(json['room_news'])
-        : null;
+    roomNews =
+        json['room_news'] != null ? RoomNews.fromJson(json['room_news']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.info != null) {
-      data['info'] = this.info!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (info != null) {
+      data['info'] = info!.toJson();
     }
-    if (this.exp != null) {
-      data['exp'] = this.exp!.toJson();
+    if (exp != null) {
+      data['exp'] = exp!.toJson();
     }
-    data['follower_num'] = this.followerNum;
-    data['room_id'] = this.roomId;
-    data['medal_name'] = this.medalName;
-    data['glory_count'] = this.gloryCount;
-    data['pendant'] = this.pendant;
-    data['link_group_num'] = this.linkGroupNum;
-    if (this.roomNews != null) {
-      data['room_news'] = this.roomNews!.toJson();
+    data['follower_num'] = followerNum;
+    data['room_id'] = roomId;
+    data['medal_name'] = medalName;
+    data['glory_count'] = gloryCount;
+    data['pendant'] = pendant;
+    data['link_group_num'] = linkGroupNum;
+    if (roomNews != null) {
+      data['room_news'] = roomNews!.toJson();
     }
     return data;
   }
@@ -62,27 +61,27 @@ class Info {
   OfficialVerify? officialVerify;
   int? gender;
 
-  Info({this.uid, this.uname, this.face, this.officialVerify, this.gender});
+  Info({uid, uname, face, officialVerify, gender});
 
   Info.fromJson(Map<String, dynamic> json) {
     uid = json['uid'];
     uname = json['uname'];
     face = json['face'];
     officialVerify = json['official_verify'] != null
-        ? new OfficialVerify.fromJson(json['official_verify'])
+        ? OfficialVerify.fromJson(json['official_verify'])
         : null;
     gender = json['gender'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['uid'] = this.uid;
-    data['uname'] = this.uname;
-    data['face'] = this.face;
-    if (this.officialVerify != null) {
-      data['official_verify'] = this.officialVerify!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['uid'] = uid;
+    data['uname'] = uname;
+    data['face'] = face;
+    if (officialVerify != null) {
+      data['official_verify'] = officialVerify!.toJson();
     }
-    data['gender'] = this.gender;
+    data['gender'] = gender;
     return data;
   }
 }
@@ -91,7 +90,7 @@ class OfficialVerify {
   int? type;
   String? desc;
 
-  OfficialVerify({this.type, this.desc});
+  OfficialVerify({type, desc});
 
   OfficialVerify.fromJson(Map<String, dynamic> json) {
     type = json['type'];
@@ -99,9 +98,9 @@ class OfficialVerify {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['type'] = this.type;
-    data['desc'] = this.desc;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['type'] = type;
+    data['desc'] = desc;
     return data;
   }
 }
@@ -109,18 +108,18 @@ class OfficialVerify {
 class Exp {
   MasterLevel? masterLevel;
 
-  Exp({this.masterLevel});
+  Exp({masterLevel});
 
   Exp.fromJson(Map<String, dynamic> json) {
     masterLevel = json['master_level'] != null
-        ? new MasterLevel.fromJson(json['master_level'])
+        ? MasterLevel.fromJson(json['master_level'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.masterLevel != null) {
-      data['master_level'] = this.masterLevel!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (masterLevel != null) {
+      data['master_level'] = masterLevel!.toJson();
     }
     return data;
   }
@@ -132,7 +131,7 @@ class MasterLevel {
   List<int>? current;
   List<int>? next;
 
-  MasterLevel({this.level, this.color, this.current, this.next});
+  MasterLevel({level, color, current, next});
 
   MasterLevel.fromJson(Map<String, dynamic> json) {
     level = json['level'];
@@ -142,11 +141,11 @@ class MasterLevel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['level'] = this.level;
-    data['color'] = this.color;
-    data['current'] = this.current;
-    data['next'] = this.next;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['level'] = level;
+    data['color'] = color;
+    data['current'] = current;
+    data['next'] = next;
     return data;
   }
 }
@@ -156,7 +155,7 @@ class RoomNews {
   String? ctime;
   String? ctimeText;
 
-  RoomNews({this.content, this.ctime, this.ctimeText});
+  RoomNews({content, ctime, ctimeText});
 
   RoomNews.fromJson(Map<String, dynamic> json) {
     content = json['content'];
@@ -165,10 +164,10 @@ class RoomNews {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['content'] = this.content;
-    data['ctime'] = this.ctime;
-    data['ctime_text'] = this.ctimeText;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['content'] = content;
+    data['ctime'] = ctime;
+    data['ctime_text'] = ctimeText;
     return data;
   }
 }

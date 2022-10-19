@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:srk_monitor/views/settingpage/widgets/settings_items.dart';
+import 'package:srk_monitor/views/setting_page/widgets/settings_items.dart';
 
 class SettingsView extends StatelessWidget {
   final double padding = 448;

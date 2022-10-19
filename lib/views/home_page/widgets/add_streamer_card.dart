@@ -5,8 +5,8 @@ import 'package:srk_monitor/constants/colors.dart';
 
 import '../providers/streamer_notifier.dart';
 
-class AddStreamrCard extends ConsumerWidget {
-  const AddStreamrCard({Key? key}) : super(key: key);
+class AddStreamCard extends ConsumerWidget {
+  const AddStreamCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ref) {

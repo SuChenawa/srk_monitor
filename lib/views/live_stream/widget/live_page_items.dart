@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:srk_monitor/views/livestreame/PresetPage/small_9.dart';
+
+import '../preset_page/small_9.dart';
 
 class LivePageItem extends StatelessWidget {
   const LivePageItem({super.key});
