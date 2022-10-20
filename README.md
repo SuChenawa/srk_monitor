@@ -6,7 +6,7 @@
 正在进行api相关的开发  
 进度：  
  -------------------------------------------------
-<div style="width:600px;height:5px;border:1px solid white"><div style="width:50%;height:5px;background-color:white;"></div></div>
+<div style="width:600px;height:10px;border:1px solid white"><div style="width:50%;height:8px;background-color:white;margin:1px">50%</div></div>
  -------------------------------------------------
 
 
