@@ -11,7 +11,7 @@ class LiveRoomInfoDataSource {
         'room_id': roomId,
       };
       final urlParams = Uri(queryParameters: queryParams).query;
-      final url = '${getRoomInfoUrl()}?$urlParams';
+      final url = '${Api.getRoomInfoUrl()}?$urlParams';
       final jsonData = await httpService.get(url);
       if (jsonData.isNotEmpty) {
         BaseResponse baseResponse =

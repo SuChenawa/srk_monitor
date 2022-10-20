@@ -12,7 +12,7 @@ class LiveUserInfoDataSource {
         'uid': uid,
       };
       final urlParams = Uri(queryParameters: queryParams).query;
-      final url = '${getLiveUserInfoUrl()}?$urlParams';
+      final url = '${Api.getLiveUserInfoUrl()}?$urlParams';
       final jsonData = await httpService.get(url);
       if (jsonData.isNotEmpty) {
         BaseResponse baseResponse =

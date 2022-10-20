@@ -11,14 +11,14 @@ class LiveStreamUrlDto {
     code = json['code'];
     message = json['message'];
     ttl = json['ttl'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    data['message'] = this.message;
-    data['ttl'] = this.ttl;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['code'] = code;
+    data['message'] = message;
+    data['ttl'] = ttl;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -47,28 +47,28 @@ class Data {
     if (json['quality_description'] != null) {
       qualityDescription = <QualityDescription>[];
       json['quality_description'].forEach((v) {
-        qualityDescription!.add(new QualityDescription.fromJson(v));
+        qualityDescription!.add(QualityDescription.fromJson(v));
       });
     }
     if (json['durl'] != null) {
       durl = <Durl>[];
       json['durl'].forEach((v) {
-        durl!.add(new Durl.fromJson(v));
+        durl!.add(Durl.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['current_quality'] = this.currentQuality;
-    data['accept_quality'] = this.acceptQuality;
-    data['current_qn'] = this.currentQn;
-    if (this.qualityDescription != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['current_quality'] = currentQuality;
+    data['accept_quality'] = acceptQuality;
+    data['current_qn'] = currentQn;
+    if (qualityDescription != null) {
       data['quality_description'] =
-          this.qualityDescription!.map((v) => v.toJson()).toList();
+          qualityDescription!.map((v) => v.toJson()).toList();
     }
-    if (this.durl != null) {
-      data['durl'] = this.durl!.map((v) => v.toJson()).toList();
+    if (durl != null) {
+      data['durl'] = durl!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -86,9 +86,9 @@ class QualityDescription {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['qn'] = this.qn;
-    data['desc'] = this.desc;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['qn'] = qn;
+    data['desc'] = desc;
     return data;
   }
 }
@@ -111,12 +111,12 @@ class Durl {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['url'] = this.url;
-    data['length'] = this.length;
-    data['order'] = this.order;
-    data['stream_type'] = this.streamType;
-    data['p2p_type'] = this.p2pType;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['url'] = url;
+    data['length'] = length;
+    data['order'] = order;
+    data['stream_type'] = streamType;
+    data['p2p_type'] = p2pType;
     return data;
   }
 }
