@@ -10,4 +10,4 @@
  -------------------------------------------------
 
 
- 设计图：[Figma](https://www.figma.com/file/8A6q8s9eflyM9bNr9NSzRP/SrkMonitor)  
+ 设计图：[Figma](https://www.figma.com/file/8A6q8s9eflyM9bNr9NSzRP/SrkMonitor?node-id=0%3A1)  
