@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/domain/entity/home_page/home_grid_entity.dart';
 import '../../../core/domain/use_case/home_page/home_page_use_case.dart';
 
-class StreamerNotifier extends StateNotifier<List<HomeGridEntity>> {
+class StreamerNotifier extends StateNotifier<List<HomeGridEntity>?> {
   late SharedPreferences prefs;
   List<String> roomIds = [];
   // 關注的房間list
@@ -44,9 +44,8 @@ class StreamerNotifier extends StateNotifier<List<HomeGridEntity>> {
   void fetchData() async {
     final List<HomeGridEntity>? entityList =
         await useCase.getHomeGridEntityList(roomIds);
-    if (entityList != null) {
-      state = entityList;
-    }
+
+    state = entityList;
   }
 
   void initPref() async {
@@ -57,6 +56,6 @@ class StreamerNotifier extends StateNotifier<List<HomeGridEntity>> {
 }
 
 final streamerProvider =
-    StateNotifierProvider<StreamerNotifier, List<HomeGridEntity>>((ref) {
+    StateNotifierProvider<StreamerNotifier, List<HomeGridEntity>?>((ref) {
   return StreamerNotifier();
 });

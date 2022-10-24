@@ -16,7 +16,7 @@ class HomeGridView extends ConsumerWidget {
     StreamerNotifier streamerNotifier = ref.read(streamerProvider.notifier);
     // streamers 裝著一個 HomeGridEntity的 List,
     //當裡面的List<HomeGridEntity> 更新的時候會觸法介面重構
-    List<HomeGridEntity> streamers = ref.watch(streamerProvider);
+    List<HomeGridEntity>? streamers = ref.watch(streamerProvider);
 
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -24,7 +24,7 @@ class HomeGridView extends ConsumerWidget {
         vertical: 35.0,
       ),
       child: GridView.builder(
-        itemCount: streamers.length,
+        itemCount: streamers?.length ?? 0,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: crossAxisCount == 0 ? 1 : crossAxisCount,
             childAspectRatio: 1.114),
@@ -32,16 +32,16 @@ class HomeGridView extends ConsumerWidget {
           return FittedBox(
             fit: BoxFit.fitHeight,
             child: LiveCardView(
-              roomId: streamers[index].roomId.toString(),
-              title: streamers[index].title,
-              isLive: streamers[index].isLive,
-              coverUrl: streamers[index].coverUrl,
-              userName: streamers[index].userName,
+              roomId: (streamers?[index].roomId).toString(),
+              title: streamers?[index].title ?? '',
+              isLive: streamers?[index].isLive ?? 0,
+              coverUrl: streamers?[index].coverUrl,
+              userName: streamers?[index].userName ?? '',
               onTap: () {},
               onLongPress: () {
                 streamerNotifier.removeStreamer(
-                  streamers[index].roomId.toString(),
-                  streamers[index].shortId.toString(),
+                  streamers?[index].roomId.toString() ?? '',
+                  streamers?[index].shortId.toString() ?? '',
                 );
               },
             ),
