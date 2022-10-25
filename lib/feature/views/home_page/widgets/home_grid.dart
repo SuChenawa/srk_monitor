@@ -13,7 +13,8 @@ class HomeGridView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     double width = MediaQuery.of(context).size.width;
     int crossAxisCount = (width - padding) ~/ 160;
-    StreamerNotifier streamerNotifier = ref.read(streamerProvider.notifier);
+    final StreamerNotifier streamerNotifier =
+        ref.read(streamerProvider.notifier);
     // streamers 裝著一個 HomeGridEntity的 List,
     //當裡面的List<HomeGridEntity> 更新的時候會觸法介面重構
     List<HomeGridEntity>? streamers = ref.watch(streamerProvider);

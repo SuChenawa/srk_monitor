@@ -5,7 +5,8 @@ import 'package:srk_monitor/core/domain/translator/live_stream/live_stream_entit
 
 class LiveStreamUseCase {
   final LiveStreamRepository repository = LiveStreamRepository();
-  final LiveStreamEntity errorModel = LiveStreamEntity(urls: ['error']);
+  final LiveStreamEntity errorModel =
+      LiveStreamEntity(roomId: '0', isLive: false, urls: ['error']);
 
   Future<List<LiveStreamEntity>?> getLiveStreamEntityList(
     List<String> roomIds, {
@@ -29,7 +30,7 @@ class LiveStreamUseCase {
     final LiveStreamUrlDto? dto =
         await repository.getLiveStreamDto(roomId, useM3u8: useM3u8);
     if (dto != null) {
-      return LiveStreamEntityTranslator.mapDtoToEntity(dto);
+      return LiveStreamEntityTranslator.mapDtoToEntity(roomId, dto);
     }
     return null;
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:srk_monitor/feature/providers/live_stream/live_notifier.dart';
 
-import '../widget/player.dart';
-
-class Small9 extends StatelessWidget {
+class Small9 extends ConsumerWidget {
   final double x = 0;
   final double y = 0;
 
@@ -21,7 +21,13 @@ class Small9 extends StatelessWidget {
   Small9({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // only for API Testing, remove when finished
+    final LiveNotifier liveNotifier =
+        ref.read(liveNotifierProvider.originProvider);
+    liveNotifier.getLiveStreamVideo();
+    // only for API Testing, remove when finished
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: ConstraintLayout(
@@ -92,7 +98,7 @@ class Small9 extends StatelessWidget {
           Container(
             color: Colors.green,
             alignment: Alignment.center,
-            child: const StreamPlayer(),
+            child: const SizedBox(),
           ).applyConstraint(
             id: box5,
             size: matchConstraint,

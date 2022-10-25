@@ -14,7 +14,10 @@ class LiveStreamDataSource {
   }) async {
     try {
       final String url = Api.getLiveStreamUrl(roomId, useM3u8);
-      final jsonResponse = await HttpService().get(url);
+      final jsonResponse = await HttpService().get(
+        url,
+        returnOriginal: true,
+      );
       LiveStreamUrlDto response = LiveStreamUrlDto.fromJson(jsonResponse);
       return response;
     } catch (e) {
