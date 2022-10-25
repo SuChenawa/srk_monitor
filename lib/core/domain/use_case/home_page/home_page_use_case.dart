@@ -18,6 +18,8 @@ class HomePageUseCase {
   Future<List<HomeGridEntity>?> getHomeGridEntityList(
       List<String> roomIds) async {
     List<HomeGridEntity>? list = [];
+    // TODO: change api to "get_status_info_by_uids",
+    // TODO: fetch all data at the same time
     for (var element in roomIds) {
       list.add((await _getHomePageLiveDetails(element)) ?? errorModel);
     }

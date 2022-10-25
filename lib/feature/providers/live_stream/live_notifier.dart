@@ -45,6 +45,7 @@ class LiveNotifier extends StateNotifier<List<LiveStreamEntity>> {
 final liveNotifierProvider =
     StateNotifierProvider<LiveNotifier, List<LiveStreamEntity>>(
   (ref) {
+    // TODO: decide whether to fetch live data by live notifier itself or pass from outside.
     final List<HomeGridEntity>? homeGridEntities = ref.watch(streamerProvider);
     return LiveNotifier(homeGridEntities);
   },
