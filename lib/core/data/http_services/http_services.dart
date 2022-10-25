@@ -38,6 +38,7 @@ class HttpService {
     int retryAttempts = 3,
     int timeout = 15,
     bool showLoading = false,
+    bool returnOriginal = false,
   }) async {
     try {
       final response = await _simpleGet(
@@ -48,6 +49,9 @@ class HttpService {
 
       if (response.statusCode == 200) {
         final data = jsonDecode(utf8.decode(response.bodyBytes));
+        if (returnOriginal) {
+          return data;
+        }
 
         if (data['code'] == 0 || data['code'] == '0') {
           return data['data'];
