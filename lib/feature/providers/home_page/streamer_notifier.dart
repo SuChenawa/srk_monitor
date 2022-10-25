@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:srk_monitor/feature/services/timer.dart';
 
 import '../../../core/domain/entity/home_page/home_grid_entity.dart';
 import '../../../core/domain/use_case/home_page/home_page_use_case.dart';
@@ -12,6 +13,7 @@ class StreamerNotifier extends StateNotifier<List<HomeGridEntity>?> {
   StreamerNotifier() : super([]) {
     // initialize shared_preferences
     initPref();
+    GlobalTimer().addFunctionToTimerPerMin(fetchData);
   }
   final HomePageUseCase useCase = HomePageUseCase();
 
