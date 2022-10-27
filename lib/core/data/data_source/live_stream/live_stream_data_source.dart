@@ -11,9 +11,14 @@ class LiveStreamDataSource {
   Future<LiveStreamUrlDto?> getStreamUrlDto(
     String roomId, {
     required bool useM3u8,
+    required int quality,
   }) async {
     try {
-      final String url = Api.getLiveStreamUrl(roomId, useM3u8);
+      final String url = Api.getLiveStreamUrl(
+        roomId,
+        useM3u8,
+        quality,
+      );
       final jsonResponse = await HttpService().get(
         url,
         returnOriginal: true,

@@ -9,11 +9,13 @@ class LiveStreamRepository {
   Future<LiveStreamUrlDto?> getLiveStreamDto(
     String roomId, {
     required bool useM3u8,
+    required int quality,
   }) async {
     try {
       final LiveStreamUrlDto? dto = await dataSource.getStreamUrlDto(
         roomId,
         useM3u8: useM3u8,
+        quality: quality,
       );
       if (dto?.code == 0) {
         return dto;
