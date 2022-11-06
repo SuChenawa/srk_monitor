@@ -46,6 +46,7 @@ dependencies:
   dio: ^4.0.6
   dart_vlc: ^0.3.0
   flutter_native_view: ^0.0.2
+  intl: ^0.17.0
   
 
 dev_dependencies:
@@ -64,6 +65,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

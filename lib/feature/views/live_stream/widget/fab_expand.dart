@@ -12,7 +12,7 @@ class FabExpand extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,12 +24,18 @@ class FabExpand extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(Icons.menu),
+                Container(
+                  margin: const EdgeInsets.all(8.0),
+                  child: const Icon(Icons.menu),
+                ),
                 InkwellWidget(
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: const Icon(Icons.arrow_back),
+                  child: Container(
+                    margin: const EdgeInsets.all(8.0),
+                    child: Icon(Icons.arrow_back),
+                  ),
                 ),
               ],
             ),
@@ -42,9 +48,11 @@ class FabExpand extends StatelessWidget {
                 GestureDetector(
                   onTap: onSettingClick,
                   child: InkwellWidget(
-                    onTap: onSettingClick,
-                    child: const Icon(Icons.settings),
-                  ),
+                      onTap: onSettingClick,
+                      child: Container(
+                        margin: const EdgeInsets.all(8.0),
+                        child: Icon(Icons.settings),
+                      )),
                 ),
               ],
             ),

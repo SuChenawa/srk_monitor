@@ -52,8 +52,10 @@ class Big1Small7State extends ConsumerState<Big1Small7> {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 500),
               curve: Curves.elasticOut,
-              width: isFabExpanded ? height * 0.1157 : height * 0.06,
-              height: isFabExpanded ? height * 0.1157 : height * 0.06,
+              width: isFabExpanded ? height * 0.15 : height * 0.06,
+              height: isFabExpanded ? height * 0.15 : height * 0.06,
+              // width: isFabExpanded ? height * 0.1157 : height * 0.06,
+              // height: isFabExpanded ? height * 0.1157 : height * 0.06,
               decoration: BoxDecoration(
                 color: surface2Color,
                 borderRadius: BorderRadius.circular(30.0),
