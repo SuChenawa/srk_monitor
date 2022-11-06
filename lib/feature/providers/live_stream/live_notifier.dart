@@ -8,7 +8,9 @@ import '../../../core/domain/use_case/live_stream/live_stream_use_case.dart';
 class LiveNotifier extends StateNotifier<List<LiveStreamEntity>> {
   LiveNotifier(
     this.homeGridEntities,
-  ) : super([]);
+  ) : super([]) {
+    getLiveStreamVideo();
+  }
   final List<HomeGridEntity>? homeGridEntities;
 
   LiveStreamUseCase useCase = LiveStreamUseCase();

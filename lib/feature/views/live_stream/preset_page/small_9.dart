@@ -23,9 +23,7 @@ class Small9 extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // only for API Testing, remove when finished
-    final LiveNotifier liveNotifier =
-        ref.read(liveNotifierProvider.originProvider);
-    liveNotifier.getLiveStreamVideo();
+    final liveStreamEntity = ref.watch(liveNotifierProvider);
     // only for API Testing, remove when finished
 
     return Scaffold(
@@ -96,10 +94,17 @@ class Small9 extends ConsumerWidget {
             centerTo: parent,
           ),
           Container(
-            color: Colors.green,
-            alignment: Alignment.center,
-            child: const SizedBox(),
-          ).applyConstraint(
+                  color: Colors.green,
+                  alignment: Alignment.center,
+                  child: liveStreamEntity.isEmpty
+                      ? const CircularProgressIndicator()
+                      : const CircularProgressIndicator()
+                  // StreamPlayer(
+                  //     isLive: liveStreamEntity[1].isLive,
+                  //     liveUrl: liveStreamEntity[1].urls?[0] ?? '',
+                  //   ),
+                  )
+              .applyConstraint(
             id: box5,
             size: matchConstraint,
             widthPercent: 1 / 3,
