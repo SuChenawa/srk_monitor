@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../constants/colors.dart';
 import '../../utils/settings/hero_rect_tween.dart';
@@ -31,7 +32,7 @@ class SettingsPageLayout extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 64.0),
                         child: Text(
-                          '设置项',
+                          AppLocalizations.of(context)!.settings,
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
                             color: textColor,
@@ -48,7 +49,7 @@ class SettingsPageLayout extends StatelessWidget {
                           ).copyWith(
                               elevation: ButtonStyleButton.allOrNull(0.0)),
                           label: Text(
-                            '返回上一级',
+                            AppLocalizations.of(context)!.back_to_previous,
                             style: TextStyle(
                               fontSize: 16.0,
                               color: textColor,

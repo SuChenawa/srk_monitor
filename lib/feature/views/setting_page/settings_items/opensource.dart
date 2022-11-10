@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../constants/colors.dart';
 import '../../home_page/widgets/home_app_bar.dart';
@@ -16,7 +17,7 @@ class OpenSourceLicensePage extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                '开放源代码许可',
+                AppLocalizations.of(context)!.open_source_license,
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
@@ -26,12 +27,11 @@ class OpenSourceLicensePage extends StatelessWidget {
               const Spacer(),
               ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  
                   foregroundColor: surface4Color,
                   backgroundColor: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  '返回上一级',
+                  AppLocalizations.of(context)!.back_to_previous,
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,

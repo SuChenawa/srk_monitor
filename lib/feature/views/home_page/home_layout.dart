@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:srk_monitor/feature/views/live_stream/live_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../constants/colors.dart';
 import '../../utils/settings/hero_rect_tween.dart';
@@ -40,7 +41,7 @@ class HomePageLayout extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                'Srk Monitor',
+                AppLocalizations.of(context)!.app_name,
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
@@ -56,7 +57,7 @@ class HomePageLayout extends StatelessWidget {
                   backgroundColor: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  '临时测试入口',
+                  AppLocalizations.of(context)!.test_page,
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,
@@ -86,7 +87,7 @@ class HomePageLayout extends StatelessWidget {
                     backgroundColor: surface2Color,
                   ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                   label: Text(
-                    '设置',
+                    AppLocalizations.of(context)!.settings,
                     style: TextStyle(
                       fontSize: 16.0,
                       color: textColor,

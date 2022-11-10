@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../constants/colors.dart';
 import '../../home_page/widgets/home_app_bar.dart';
@@ -17,7 +18,7 @@ class AboutPage extends StatelessWidget {
             children: [
               const SizedBox(width: 64.0),
               Text(
-                '关于',
+                AppLocalizations.of(context)!.about,
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: textColor,
@@ -31,7 +32,7 @@ class AboutPage extends StatelessWidget {
                   backgroundColor: surface2Color,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 label: Text(
-                  '返回上一级',
+                  AppLocalizations.of(context)!.back_to_previous,
                   style: TextStyle(
                     fontSize: 16.0,
                     color: textColor,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:srk_monitor/feature/views/setting_page/settings_items/about.dart';
 import 'package:srk_monitor/feature/views/setting_page/settings_items/general.dart';
 import 'package:srk_monitor/feature/views/setting_page/settings_items/opensource.dart';
@@ -16,8 +18,8 @@ class SettingsItems extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         children: <Widget>[
           ListTile(
-              title: const Text('通用'),
-              subtitle: const Text('通用设置'),
+              title: Text(AppLocalizations.of(context)!.general),
+              subtitle: Text(AppLocalizations.of(context)!.general_settings),
               leading: const Icon(Icons.home),
               onTap: () {
                 Navigator.push(
@@ -26,7 +28,7 @@ class SettingsItems extends StatelessWidget {
                         builder: (context) => const GeneralPage()));
               }),
           ListTile(
-              title: const Text('开放源代码许可'),
+              title: Text(AppLocalizations.of(context)!.open_source_license),
               subtitle: const Text(''),
               leading: const Icon(Icons.rule_rounded),
               onTap: () {
@@ -36,8 +38,8 @@ class SettingsItems extends StatelessWidget {
                         builder: (context) => const OpenSourceLicensePage()));
               }),
           ListTile(
-              title: const Text('关于'),
-              subtitle: const Text('关于 srk-monitor'),
+              title: Text(AppLocalizations.of(context)!.about),
+              subtitle: Text(AppLocalizations.of(context)!.about_app),
               leading: const Icon(Icons.settings),
               onTap: () {
                 Navigator.push(context,

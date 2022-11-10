@@ -1,6 +1,19 @@
 {
     "helloWorld": "Hello World!",
-    "@helloWorld": {
-      "description": "The conventional newborn programmer greeting"
-    }
+    "app_name":"Srk-Monitor",
+    "settings":"Settings",
+    "please_enter_roomId":"Please enter RoomID",
+    "sure":"Sure",
+    "cancel":"Cancel",
+    "back":"Back",
+    "back_to_previous":"Back to previous",
+
+
+
+    "general":"General",
+    "general_settings":"General settings",
+    "open_source_license":"Open Source License",
+    "about":"About",
+    "about_app":"About Srk Monitor",
+    "test_page":"Test Page"
 }

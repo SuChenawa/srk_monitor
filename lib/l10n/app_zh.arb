@@ -1,6 +1,19 @@
 {
     "helloWorld": "你好，世界!",
-    "@helloWorld": {
-        "description": "The conventional newborn programmer greeting"
-      }
+    "app_name":"兽人控监控室",
+    "settings":"设置",
+    "please_enter_roomId":"请输入房间ID",
+    "sure":"确定",
+    "cancel":"取消",
+    "back":"返回",
+    "back_to_previous":"返回上一级",
+
+
+
+    "general":"通用",
+    "general_settings":"通用设定",
+    "open_source_license":"开放源代码许可",
+    "about":"关于",
+    "about_app":"关于兽人控监控室",
+    "test_page":"临时测试入口"
 }
