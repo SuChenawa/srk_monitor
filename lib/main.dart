@@ -4,7 +4,7 @@ import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:srk_monitor/constants/colors.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'feature/views/home_page/home_layout.dart';
 import 'feature/views/setting_page/settings_items/general.dart';
@@ -82,13 +82,13 @@ class MyApp extends StatelessWidget {
         '/settings': (context) => const SettingsPageLayout(),
         '/general': (context) => const GeneralPage(),
       },
-      localizationsDelegates: const [
-        AppLocalizations.delegate, // Add this line
-      ],
-      supportedLocales: const [
-        Locale('en', ''), // English, no country code
-        Locale('zh', ''), // Spanish, no country code
-      ],
+      // localizationsDelegates: const [
+      //   AppLocalizations.delegate, // Add this line
+      // ],
+      // supportedLocales: const [
+      //   Locale('en', ''), // English, no country code
+      //   Locale('zh', ''), // Spanish, no country code
+      // ],
     );
   }
 }
