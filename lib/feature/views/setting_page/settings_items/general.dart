@@ -51,7 +51,31 @@ class GeneralPage extends StatelessWidget {
           ),
         ),
       ),
-      body: const Text('General data'),
+      body: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 64.0,
+          vertical: 64.0,
+        ),
+        child: ListView(
+          padding: const EdgeInsets.all(10),
+          children: <Widget>[
+            ListTile(
+              leading: const Icon(
+                Icons.translate,
+              ),
+              title: Text(AppLocalizations.of(context)!.back_to_previous),
+              subtitle: Text('修改您的应用语言'),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.brightness_6,
+              ),
+              title: Text('主题色'),
+              subtitle: Text('更换应用程序风格'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

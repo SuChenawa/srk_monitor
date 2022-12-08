@@ -11,6 +11,13 @@
 
 
     "general":"通用",
+    "app_language":"语言",
+    "modify_language":"修改您的语言",
+    "theme":"主题",
+    "modify_theme":"更改您的主题",
+
+
+
     "general_settings":"通用设定",
     "open_source_license":"开放源代码许可",
     "about":"关于",

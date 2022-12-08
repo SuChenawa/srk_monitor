@@ -11,6 +11,13 @@
 
 
     "general":"General",
+    "app_language":"App_Language",
+    "modify_language":"Modify your App Language",
+    "theme":"Themes",
+    "modify_theme":"Modify your App Theme",
+
+
+
     "general_settings":"General settings",
     "open_source_license":"Open Source License",
     "about":"About",
