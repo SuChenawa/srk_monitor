@@ -1,14 +1,20 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/data/local_storage/live_stream/big1_small7/local_big1_small7_storage.dart';
+import '../../../../core/domain/entity/home_page/home_grid_entity.dart';
+import '../../home_page/streamer_notifier.dart';
 
 class Big1Small7Notifier extends StateNotifier<LocalBig1Small7StorageModel> {
-  Big1Small7Notifier() : super(LocalBig1Small7StorageModel()) {
+  Big1Small7Notifier({
+    required this.homeGridEntities,
+  }) : super(LocalBig1Small7StorageModel()) {
     initPref();
   }
+  final List<HomeGridEntity>? homeGridEntities;
   late SharedPreferences prefs;
   final String _prefKey = 'big1Small7';
 
@@ -52,14 +58,25 @@ class Big1Small7Notifier extends StateNotifier<LocalBig1Small7StorageModel> {
 
   // ONlY f0r teSt1Ng
   void dummyFakeData() {
-    setRoom(1, '4506805');
-    setRoom(2, '550335');
+    if (homeGridEntities != null) {
+      final roomIdList = homeGridEntities!.map((e) => e.roomId).toList();
+      final int maxCount = min(roomIdList.length, 8);
+      for (var i = 0; i < maxCount; i++) {
+        setRoom(i + 1, roomIdList[i]);
+      }
+    } else {
+      setRoom(1, '4506805');
+      setRoom(2, '550335');
+    }
   }
 }
 
 final big1Small7NotifierProvider =
     StateNotifierProvider<Big1Small7Notifier, LocalBig1Small7StorageModel>(
   (ref) {
-    return Big1Small7Notifier();
+    final List<HomeGridEntity>? homeGridEntities = ref.watch(streamerProvider);
+    return Big1Small7Notifier(
+      homeGridEntities: homeGridEntities,
+    );
   },
 );

@@ -10,13 +10,24 @@ class LiveNotifier extends StateNotifier<List<LiveStreamEntity>> {
     this.homeGridEntities,
   ) : super([]) {
     getLiveStreamVideo();
+
+    // TODO: create add rooms logic. implementation TBC.
+    if (homeGridEntities != null) {
+      for (var element in homeGridEntities!) {
+        roomIds.add(element.roomId);
+        print(roomIds);
+      }
+    }
   }
   final List<HomeGridEntity>? homeGridEntities;
 
   LiveStreamUseCase useCase = LiveStreamUseCase();
 
 // TODO: create add rooms logic. implementation TBC.
-  List<String> roomIds = ['4506805', '550335'];
+  List<String> get roomIds {
+    return homeGridEntities!.map((e) => e.roomId).toList();
+  }
+
   bool useM3u8 = false;
 
   void getLiveStreamVideo() async {

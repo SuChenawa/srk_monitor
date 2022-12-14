@@ -64,12 +64,14 @@ class BasePlayers extends StatelessWidget {
           bottom: 2 * (height / 4),
           left: width * 0.75,
           right: 0,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 1.0,
-              ),
+          child: StreamPlayer(
+            key: const ValueKey('player3'),
+            playSound: false,
+            playerId: 3,
+            liveStreamEntity: LiveStreamUtil.getLiveUrlsFromEntity(
+              liveStreamEntitiesList,
+              storageModel,
+              3,
             ),
           ),
         ),
@@ -78,12 +80,14 @@ class BasePlayers extends StatelessWidget {
           bottom: 1 * (height / 4),
           left: width * 0.75,
           right: 0,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 1.0,
-              ),
+          child: StreamPlayer(
+            key: const ValueKey('player4'),
+            playSound: false,
+            playerId: 4,
+            liveStreamEntity: LiveStreamUtil.getLiveUrlsFromEntity(
+              liveStreamEntitiesList,
+              storageModel,
+              4,
             ),
           ),
         ),
@@ -92,12 +96,14 @@ class BasePlayers extends StatelessWidget {
           bottom: 0 * (height / 4),
           left: width * 0.75,
           right: 0,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 1.0,
-              ),
+          child: StreamPlayer(
+            key: const ValueKey('player5'),
+            playSound: false,
+            playerId: 5,
+            liveStreamEntity: LiveStreamUtil.getLiveUrlsFromEntity(
+              liveStreamEntitiesList,
+              storageModel,
+              5,
             ),
           ),
         ),
@@ -107,12 +113,14 @@ class BasePlayers extends StatelessWidget {
           bottom: 0,
           left: 0 * (width / 4),
           right: 3 * (width / 4),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 1.0,
-              ),
+          child: StreamPlayer(
+            key: const ValueKey('player6'),
+            playSound: false,
+            playerId: 6,
+            liveStreamEntity: LiveStreamUtil.getLiveUrlsFromEntity(
+              liveStreamEntitiesList,
+              storageModel,
+              6,
             ),
           ),
         ),
@@ -121,12 +129,14 @@ class BasePlayers extends StatelessWidget {
           bottom: 0,
           left: 1 * (width / 4),
           right: 2 * (width / 4),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 1.0,
-              ),
+          child: StreamPlayer(
+            key: const ValueKey('player7'),
+            playSound: false,
+            playerId: 7,
+            liveStreamEntity: LiveStreamUtil.getLiveUrlsFromEntity(
+              liveStreamEntitiesList,
+              storageModel,
+              7,
             ),
           ),
         ),
@@ -135,12 +145,14 @@ class BasePlayers extends StatelessWidget {
           bottom: 0,
           left: 2 * (width / 4),
           right: 3 * (width / 4),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 1.0,
-              ),
+          child: StreamPlayer(
+            key: const ValueKey('player8'),
+            playSound: false,
+            playerId: 8,
+            liveStreamEntity: LiveStreamUtil.getLiveUrlsFromEntity(
+              liveStreamEntitiesList,
+              storageModel,
+              8,
             ),
           ),
         ),
